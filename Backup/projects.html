@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our portfolio of completed engineering projects across healthcare, commercial, residential, and industrial sectors.">
+    <meta name="keywords" content="engineering projects, MEP projects, construction projects, infrastructure, portfolio">
+    <meta name="author" content="Aadishya Engineering">
+    <title>Our Projects | Aadishya Engineering</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-blue: #1e40af;
+            --light-blue: #3b82f6;
+            --sky-blue: #0ea5e9;
+            --dark-blue: #1e3a8a;
+            --white: #ffffff;
+            --light-gray: #f8fafc;
+            --gray: #64748b;
+            --dark-gray: #334155;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background: var(--white);
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: var(--white);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(30, 64, 175, 0.1);
+        }
+        
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-blue);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--light-blue);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        .call-btn {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .call-btn:hover {
+            color: var(--primary-blue);
+        }
+        
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .mobile-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-blue);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: pulse-whatsapp 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            background: #20ba5a;
+            transform: scale(1.1);
+        }
+        
+        @keyframes pulse-whatsapp {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* Page Hero */
+        .page-hero {
+            margin-top: 70px;
+            padding: 5rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--primary-blue) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+        }
+        
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .page-hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Projects Section */
+        .projects-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        
+        .elementor-widget-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .project-item {
+            position: relative;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--light-blue), var(--primary-blue));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--light-blue);
+        }
+        
+        .project-image::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .project-item:hover .project-image::after {
+            opacity: 1;
+        }
+        
+        .project-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .elementor-icon-box-wrapper {
+            background: var(--white);
+            padding: 1.5rem;
+            border: 2px solid var(--light-blue);
+            border-top: none;
+            border-radius: 0 0 15px 15px;
+            margin-top: -2px;
+        }
+        
+        .elementor-icon-box-wrapper h3 {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .elementor-icon-box-wrapper p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            background: var(--light-gray);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--dark-gray);
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: var(--white);
+            border-radius: 20px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.4s ease;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            color: var(--gray);
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light-gray);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: rotate(90deg);
+        }
+        
+        .modal-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--light-blue), var(--primary-blue));
+            border-radius: 20px 20px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: white;
+        }
+        
+        .modal-body {
+            padding: 2rem;
+        }
+        
+        .modal-body h2 {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-body p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .detail-item {
+            background: var(--light-gray);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-blue);
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .detail-value {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary-blue);
+            padding: 3rem 2rem 1rem;
+            color: white;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: var(--white);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--white);
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: flex;
+            }
+            
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: var(--white);
+                width: 100%;
+                padding: 2rem;
+                transition: left 0.3s ease;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                align-items: flex-start;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .elementor-widget-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-image {
+                height: 250px;
+                font-size: 4rem;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="https://wa.me/919090000000?text=Hi" class="whatsapp-float" target="_blank">💬</a>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Aadishya</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="tel:+919191919191" class="call-btn">📞 +91 91919 19191</a></li>
+            </ul>
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <h1>Our Projects</h1>
+        <p>Showcasing excellence in engineering design and implementation across diverse sectors</p>
+    </section>
+
+    <section class="projects-section">
+        <div class="elementor-widget-container">
+            <div class="project-item" onclick="openModal(0)">
+                <div class="project-image">🏥</div>
+                <div class="elementor-icon-box-wrapper">
+                    <h3>Zydus Hospital</h3>
+                    <p>Complete MEP design for 500-bed multi-specialty hospital facility</p>
+                    <div class="project-meta">
+                        <span class="meta-item">Healthcare</span>
+                        <span class="meta-item">2023</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item" onclick="openModal(1)">
+                <div class="project-image">🏙️</div>
+                <div class="elementor-icon-box-wrapper">
+                    <h3>Tech Tower Commercial</h3>
+                    <p>35-story commercial tower with advanced HVAC and electrical systems</p>
+                    <div class="project-meta">
+                        <span class="meta-item">Commercial</span>
+                        <span class="meta-item">2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item" onclick="openModal(2)">
+                <div class="project-image">🏢</div>
+                <div class="elementor-icon-box-wrapper">
+                    <h3>Metro Business Park</h3>
+                    <p>Integrated MEP solutions for 200,000 sq ft office complex</p>
+                    <div class="project-meta">
+                        <span class="meta-item">Infrastructure</span>
+                        <span class="meta-item">2023</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item" onclick="openModal(3)">
+                <div class="project-image">🏘️</div>
+                <div class="elementor-icon-box-wrapper">
+                    <h3>Skyline Heights Residency</h3>
+                    <p>Premium residential towers with smart home automation</p>
+                    <div class="project-meta">
+                        <span class="meta-item">Residential</span>
+                        <span class="meta-item">2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item" onclick="openModal(4)">
+                <div class="project-image">🏭</div>
+                <div class="elementor-icon-box-wrapper">
+                    <h3>Industrial Manufacturing Unit</h3>
+                    <p>Process cooling and industrial HVAC for pharmaceutical facility</p>
+                    <div class="project-meta">
+                        <span class="meta-item">Industrial</span>
+                        <span class="meta-item">2023</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item" onclick="openModal(5)">
+                <div class="project-image">🛍️</div>
+                <div class="elementor-icon-box-wrapper">
+                    <h3>City Shopping Mall</h3>
+                    <p>Complete MEP design for 5-story retail complex with parking</p>
+                    <div class="project-meta">
+                        <span class="meta-item">Retail</span>
+                        <span class="meta-item">2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">×</span>
+            <div class="modal-image" id="modalImage"></div>
+            <div class="modal-body">
+                <h2 id="modalTitle"></h2>
+                <p id="modalDescription"></p>
+                <div class="modal-details" id="modalDetails"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Aadishya Engineering</h3>
+                <p>Excellence in MEPF engineering solutions. Building tomorrow's infrastructure today.</p>
+                <div class="social-links">
+                    <a href="#">📘</a>
+                    <a href="#">🐦</a>
+                    <a href="#">💼</a>
+                    <a href="#">📷</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="clients.html">Clients</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📍 123 Engineering Plaza<br>Tech District, Business City</p>
+                <p>📧 info@aadishya.com</p>
+                <p>📞 +91 91919 19191</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Aadishya Engineering. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        const projects = [
+            {
+                icon: '🏥',
+                title: 'Zydus Hospital',
+                description: 'Complete MEP design and engineering for a state-of-the-art 500-bed multi-specialty hospital facility. The project includes advanced HVAC systems, medical gas pipeline, fire protection, and building automation systems designed to meet stringent healthcare standards.',
+                details: [
+                    { label: 'Client', value: 'Zydus Healthcare' },
+                    { label: 'Location', value: 'Ahmedabad, Gujarat' },
+                    { label: 'Year', value: '2023' },
+                    { label: 'Category', value: 'Healthcare' },
+                    { label: 'Area', value: '400,000 sq ft' },
+                    { label: 'Services', value: 'Complete MEPF' }
+                ]
+            },
+            {
+                icon: '🏙️',
+                title: 'Tech Tower Commercial',
+                description: 'A landmark 35-story commercial tower featuring cutting-edge MEP systems including VRF HVAC, intelligent building management, advanced fire protection, and energy-efficient lighting solutions. The project showcases our expertise in high-rise commercial developments.',
+                details: [
+                    { label: 'Client', value: 'Tech Realty' },
+                    { label: 'Location', value: 'Mumbai, Maharashtra' },
+                    { label: 'Year', value: '2024' },
+                    { label: 'Category', value: 'Commercial' },
+                    { label: 'Floors', value: '35 Stories' },
+                    { label: 'Services', value: 'HVAC, Electrical, BMS' }
+                ]
+            },
+            {
+                icon: '🏢',
+                title: 'Metro Business Park',
+                description: 'Integrated MEP engineering solutions for a premium 200,000 sq ft office complex. Features include energy-efficient HVAC systems, smart lighting, advanced security systems, and sustainable water management solutions.',
+                details: [
+                    { label: 'Client', value: 'Metro Infrastructure' },
+                    { label: 'Location', value: 'Pune, Maharashtra' },
+                    { label: 'Year', value: '2023' },
+                    { label: 'Category', value: 'Infrastructure' },
+                    { label: 'Area', value: '200,000 sq ft' },
+                    { label: 'Services', value: 'Complete MEP' }
+                ]
+            },
+            {
+                icon: '🏘️',
+                title: 'Skyline Heights Residency',
+                description: 'Premium residential twin towers with 500 luxury apartments featuring smart home automation, centralized HVAC, advanced security systems, and sustainable energy solutions including solar power integration.',
+                details: [
+                    { label: 'Client', value: 'Skyline Developers' },
+                    { label: 'Location', value: 'Bangalore, Karnataka' },
+                    { label: 'Year', value: '2024' },
+                    { label: 'Category', value: 'Residential' },
+                    { label: 'Units', value: '500 Apartments' },
+                    { label: 'Services', value: 'MEPF + Automation' }
+                ]
+            },
+            {
+                icon: '🏭',
+                title: 'Industrial Manufacturing Unit',
+                description: 'Specialized MEP design for pharmaceutical manufacturing facility including process cooling, clean room HVAC, industrial electrical distribution, compressed air systems, and effluent treatment plant.',
+                details: [
+                    { label: 'Client', value: 'Pharma Industries' },
+                    { label: 'Location', value: 'Vadodara, Gujarat' },
+                    { label: 'Year', value: '2023' },
+                    { label: 'Category', value: 'Industrial' },
+                    { label: 'Area', value: '150,000 sq ft' },
+                    { label: 'Services', value: 'Process MEP' }
+                ]
+            },
+            {
+                icon: '🛍️',
+                title: 'City Shopping Mall',
+                description: 'Complete MEP engineering for a 5-story retail complex with basement parking. Includes commercial HVAC, retail lighting design, fire safety systems, water supply, and advanced building management systems.',
+                details: [
+                    { label: 'Client', value: 'City Mall Group' },
+                    { label: 'Location', value: 'Delhi NCR' },
+                    { label: 'Year', value: '2024' },
+                    { label: 'Category', value: 'Retail' },
+                    { label: 'Area', value: '300,000 sq ft' },
+                    { label: 'Services', value: 'Complete MEPF' }
+                ]
+            }
+        ];
+
+        function openModal(index) {
+            const project = projects[index];
+            const modal = document.getElementById('projectModal');
+            
+            document.getElementById('modalImage').textContent = project.icon;
+            document.getElementById('modalTitle').textContent = project.title;
+            document.getElementById('modalDescription').textContent = project.description;
+            
+            const detailsHtml = project.details.map(detail => `
+                <div class="detail-item">
+                    <div class="detail-label">${detail.label}</div>
+                    <div class="detail-value">${detail.value}</div>
+                </div>
+            `).join('');
+            
+            document.getElementById('modalDetails').innerHTML = detailsHtml;
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').classList.remove('active');
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('projectModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

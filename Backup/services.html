@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive MEPF engineering services including Electrical, HVAC, PHE, Fire Systems, Solar, BIM and more. Expert engineering solutions for your projects.">
+    <meta name="keywords" content="electrical engineering, HVAC, fire systems, solar solutions, BIM, Revit, MEP services, engineering consulting">
+    <meta name="author" content="Aadishya Engineering">
+    <title>Our Services | Aadishya Engineering</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-blue: #1e40af;
+            --light-blue: #3b82f6;
+            --sky-blue: #0ea5e9;
+            --dark-blue: #1e3a8a;
+            --white: #ffffff;
+            --light-gray: #f8fafc;
+            --gray: #64748b;
+            --dark-gray: #334155;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background: var(--white);
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: var(--white);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(30, 64, 175, 0.1);
+        }
+        
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-blue);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--light-blue);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        .call-btn {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .call-btn:hover {
+            color: var(--primary-blue);
+        }
+        
+        .call-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--light-blue);
+            transition: width 0.3s ease;
+        }
+        
+        .call-btn:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .mobile-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-blue);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: pulse-whatsapp 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            background: #20ba5a;
+            transform: scale(1.1);
+        }
+        
+        @keyframes pulse-whatsapp {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* Page Hero */
+        .page-hero {
+            margin-top: 70px;
+            padding: 5rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--primary-blue) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+        }
+        
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .page-hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Services Section */
+        .services-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 2px solid var(--light-blue);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--light-blue), var(--primary-blue));
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(30, 64, 175, 0.2);
+            border-color: var(--primary-blue);
+        }
+        
+        .service-card h3 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .service-description {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        
+        .service-list li {
+            padding: 0.7rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .service-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--light-blue);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .service-list li:hover {
+            padding-left: 2.5rem;
+            color: var(--primary-blue);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--primary-blue) 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            color: white;
+            margin-top: 3rem;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            background: var(--white);
+            color: var(--primary-blue);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary-blue);
+            padding: 3rem 2rem 1rem;
+            color: white;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: var(--white);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--white);
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: flex;
+            }
+            
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: var(--white);
+                width: 100%;
+                padding: 2rem;
+                transition: left 0.3s ease;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                align-items: flex-start;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .page-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919090000000?text=Hi" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        💬
+    </a>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Aadishya</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="tel:+919191919191" class="call-btn">📞 +91 91919 19191</a></li>
+            </ul>
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>Our Services</h1>
+        <p>Comprehensive engineering solutions tailored to meet your specific project requirements</p>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="services-grid">
+            <!-- Electrical Engineering -->
+            <div class="service-card">
+                <h3>Electrical Engineering</h3>
+                <p class="service-description">EHV and HV Substations, HV & LV Small power distribution systems, SCADA systems, UPS distribution, Lighting design, Emergency lighting, Lighting automation, Earthing systems & Lightning protection systems.</p>
+                <ul class="service-list">
+                    <li>EHV & HV Substations</li>
+                    <li>LV Small Power Distribution</li>
+                    <li>SCADA Systems</li>
+                    <li>Lighting & Emergency Systems</li>
+                    <li>Earthing & Lightning Protection</li>
+                </ul>
+            </div>
+
+            <!-- HVAC -->
+            <div class="service-card">
+                <h3>HVAC</h3>
+                <p class="service-description">Air-conditioning, Critical room air-conditioning, Ventilation system, Pressurization system, Industrial Process cooling system, Inert Gas systems, Free cooling systems, Compressed Air system & Integrated Building Management Systems.</p>
+                <ul class="service-list">
+                    <li>HVAC Design</li>
+                    <li>Plumbing Systems</li>
+                    <li>Fire Protection</li>
+                    <li>Energy Optimization</li>
+                </ul>
+            </div>
+
+            <!-- Public Health Engineering -->
+            <div class="service-card">
+                <h3>Public Health Engineering (PHE)</h3>
+                <p class="service-description">Plumbing, Sanitary, Water distribution systems, Water management, Rainwater systems, Water treatment plants, Sewerage treatment plant, Effluent treatment plant.</p>
+                <ul class="service-list">
+                    <li>Plumbing & Sanitary Systems</li>
+                    <li>Water Distribution & Management</li>
+                    <li>Rainwater Harvesting</li>
+                    <li>Water & Sewerage Treatment Plants</li>
+                    <li>Effluent Treatment</li>
+                </ul>
+            </div>
+
+            <!-- Fire Systems -->
+            <div class="service-card">
+                <h3>Fire Systems</h3>
+                <p class="service-description">Fire protection, Fire detection, Fire alarm, Public address and suppression systems.</p>
+                <ul class="service-list">
+                    <li>Fire Detection & Alarm</li>
+                    <li>Fire Protection Systems</li>
+                    <li>Public Address Systems</li>
+                    <li>Fire Suppression Systems</li>
+                </ul>
+            </div>
+
+            <!-- ELV Systems -->
+            <div class="service-card">
+                <h3>ELV Systems</h3>
+                <p class="service-description">Home automation system, Rodent repellent & Water leak detection system.</p>
+                <ul class="service-list">
+                    <li>Home Automation</li>
+                    <li>Rodent Repellent Systems</li>
+                    <li>Water Leak Detection</li>
+                </ul>
+            </div>
+
+            <!-- Security Systems -->
+            <div class="service-card">
+                <h3>Security Systems</h3>
+                <p class="service-description">Building perimeter security, Gate security, CCTV & Access control system.</p>
+                <ul class="service-list">
+                    <li>Perimeter & Gate Security</li>
+                    <li>CCTV Surveillance</li>
+                    <li>Access Control Systems</li>
+                </ul>
+            </div>
+
+            <!-- Solar Systems -->
+            <div class="service-card">
+                <h3>Solar Systems</h3>
+                <p class="service-description">Ground mount & Roof mount solar solutions, Solar power solutions.</p>
+                <ul class="service-list">
+                    <li>Ground Mount Solar Solutions</li>
+                    <li>Roof Mount Solar Solutions</li>
+                    <li>Solar Power Solutions</li>
+                </ul>
+            </div>
+
+            <!-- Feasibility Studies -->
+            <div class="service-card">
+                <h3>Feasibility Studies</h3>
+                <p class="service-description">Feasibility study and analysis of existing systems & Third-party review for MEP Design.</p>
+                <ul class="service-list">
+                    <li>Existing System Analysis</li>
+                    <li>Third-party Review for MEP Design</li>
+                    <li>Feasibility Reports</li>
+                </ul>
+            </div>
+
+            <!-- Revit & BIM -->
+            <div class="service-card">
+                <h3>Revit & BIM</h3>
+                <p class="service-description">MEP models in Revit with clash detection reports.</p>
+                <ul class="service-list">
+                    <li>MEP Revit Models</li>
+                    <li>Clash Detection Reports</li>
+                    <li>BIM Coordination</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Need a Custom Engineering Solution?</h2>
+        <p>Our expert team is ready to discuss your specific requirements and deliver innovative solutions.</p>
+        <a href="contact.html" class="btn">Get Free Consultation</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Aadishya Engineering</h3>
+                <p>Excellence in MEPF engineering solutions. Building tomorrow's infrastructure today with innovative and sustainable designs.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="clients.html">Clients</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <a href="services.html">Electrical Engineering</a>
+                <a href="services.html">HVAC Systems</a>
+                <a href="services.html">Fire Protection</a>
+                <a href="services.html">Solar Solutions</a>
+                <a href="services.html">BIM & Revit</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📍 123 Engineering Plaza<br>Tech District, Business City</p>
+                <p>📧 info@aadishya.com</p>
+                <p>📞 +91 91919 19191</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Aadishya Engineering. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
