@@ -344,7 +344,7 @@
         }
         
         .about-content p {
-            
+            color: var(--gray);
             line-height: 1.9;
             margin-bottom: 1.5rem;
             font-size: 1.1rem;
@@ -573,7 +573,11 @@ background-size: contain;
             position: relative;
             z-index: 1;
         }
-        
+         service-hero h2 {
+            font-size: 2.5rem;
+            color: #1E3A8A;
+            margin-bottom: 1.5rem;
+        }
         .service-hero p {
             font-size: 1.3rem;
             opacity: 0.95;
@@ -628,7 +632,8 @@ background-size: contain;
             color: #1E3A8A;
             margin-bottom: 1.5rem;
         }
-        
+       
+
         .about-intro p {
             font-size: 1.1rem;
             color: var(--gray);
@@ -701,7 +706,7 @@ background-size: contain;
         
         .mvg-card p {
             
-            font-size: 1 rem;
+            font-size: 1.1rem;
             line-height: 1.8;
         }
         
@@ -799,11 +804,17 @@ background-size: contain;
         /* Footer */
         footer {
             background: var(--primary-blue);
-	    background-image: linear-gradient(rgb(1 14 54 / 70%), rgba(0, 32, 128, 0.7)), url('../images/1.png') ;
+	    background-image: linear-gradient(rgb(1 14 54 /100%), rgba(0, 32, 128, 0.7)), url('../images/1.png') ;
             padding: 3rem 2rem 1rem;
             color: white;
         }
-        
+        @media (max-width: 768px) {
+  footer {
+background-repeat:no-repeat;
+    background-size: 100% auto;  /* Stretch image width slightly */
+    background-position:  center bottom;
+  }
+}
         .footer-content {
             max-width: 1400px;
             margin: 0 auto;
