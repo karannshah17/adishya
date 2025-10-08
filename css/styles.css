@@ -339,12 +339,12 @@
         
         .about-content h2 {
             font-size: 2.5rem;
-            color: var(--primary-blue);
+            color: var(--dark-blue);
             margin-bottom: 1.5rem;
         }
         
         .about-content p {
-            color: var(--gray);
+            
             line-height: 1.9;
             margin-bottom: 1.5rem;
             font-size: 1.1rem;
@@ -700,8 +700,8 @@ background-size: contain;
         }
         
         .mvg-card p {
-            color: var(--gray);
-            font-size: 1.1rem;
+            
+            font-size: 1 rem;
             line-height: 1.8;
         }
         
